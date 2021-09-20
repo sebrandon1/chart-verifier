@@ -3,13 +3,14 @@ package report
 import (
 	"encoding/json"
 	"fmt"
+	"strconv"
+	"strings"
+	"testing"
+
 	"github.com/redhat-certification/chart-verifier/pkg/chartverifier/profiles"
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/assert"
 	helmchart "helm.sh/helm/v3/pkg/chart"
-	"strconv"
-	"strings"
-	"testing"
 )
 
 func TestReports(t *testing.T) {
@@ -32,7 +33,7 @@ func TestReports(t *testing.T) {
 	testAnnotationsReport = append(testAnnotationsReport, Annotation{Name: fmt.Sprintf("charts.openshift.io/%s", CertifiedOCPVersionAnnotationName), Value: "4.7.8"})
 
 	testDigestReport := &DigestReport{}
-	testDigestReport.PackageDigest = "4f29f2a95bf2b9a1c62fd215b079a01bdc5a38e9b4ff874d0fa21d0afca2e76d"
+	testDigestReport.PackageDigest = "527c912fd1547ddb3dec368ae8cbd79524365595f5413cff7066669f96c9f1da"
 	testDigestReport.ChartDigest = "sha256:0c1c44def5c5de45212d90396062e18e0311b07789f477268fbf233c1783dbd0"
 
 	testResultsReport := &ResultsReport{}

@@ -4,14 +4,15 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"strconv"
+	"strings"
+	"testing"
+
 	"github.com/redhat-certification/chart-verifier/pkg/chartverifier/profiles"
 	"github.com/redhat-certification/chart-verifier/pkg/chartverifier/report"
 	"github.com/spf13/viper"
 	"github.com/stretchr/testify/require"
 	helmchart "helm.sh/helm/v3/pkg/chart"
-	"strconv"
-	"strings"
-	"testing"
 )
 
 func TestReport(t *testing.T) {
@@ -33,7 +34,7 @@ func TestReport(t *testing.T) {
 	expectedMetadata.Chart = &helmchart.Metadata{Name: "chart", Version: "0.1.0-v3.valid"}
 
 	expectedDigests := &report.DigestReport{}
-	expectedDigests.PackageDigest = "4f29f2a95bf2b9a1c62fd215b079a01bdc5a38e9b4ff874d0fa21d0afca2e76d"
+	expectedDigests.PackageDigest = "527c912fd1547ddb3dec368ae8cbd79524365595f5413cff7066669f96c9f1da"
 	expectedDigests.ChartDigest = "sha256:0c1c44def5c5de45212d90396062e18e0311b07789f477268fbf233c1783dbd0"
 
 	t.Run("Should fail when no argument is given", func(t *testing.T) {

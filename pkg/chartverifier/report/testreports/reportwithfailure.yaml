@@ -10,7 +10,7 @@ metadata:
         digest: sha256:0c1c44def5c5de45212d90396062e18e0311b07789f477268fbf233c1783dbd0
         digests:
             chart: sha256:0c1c44def5c5de45212d90396062e18e0311b07789f477268fbf233c1783dbd0
-            package: 4f29f2a95bf2b9a1c62fd215b079a01bdc5a38e9b4ff874d0fa21d0afca2e76d
+            package: 527c912fd1547ddb3dec368ae8cbd79524365595f5413cff7066669f96c9f1da
         lastCertifiedTimestamp: "2021-07-02T08:09:56.881793-04:00"
         certifiedOpenShiftVersions: N/A
     chart:

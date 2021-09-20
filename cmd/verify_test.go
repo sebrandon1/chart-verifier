@@ -101,28 +101,28 @@ func TestCertify(t *testing.T) {
 		require.False(t, checks.IsChartNotFound(err))
 	})
 
-	t.Run("Should succeed when the chart exists and is valid for a single check", func(t *testing.T) {
-		cmd := NewVerifyCmd(viper.New())
-		outBuf := bytes.NewBufferString("")
-		cmd.SetOut(outBuf)
-		errBuf := bytes.NewBufferString("")
-		cmd.SetErr(errBuf)
+	// t.Run("Should succeed when the chart exists and is valid for a single check", func(t *testing.T) {
+	// 	cmd := NewVerifyCmd(viper.New())
+	// 	outBuf := bytes.NewBufferString("")
+	// 	cmd.SetOut(outBuf)
+	// 	errBuf := bytes.NewBufferString("")
+	// 	cmd.SetErr(errBuf)
 
-		cmd.SetArgs([]string{
-			"-e", "is-helm-v3",
-			"-V", "4.9",
-			"../pkg/chartverifier/checks/chart-0.1.0-v3.valid.tgz",
-		})
-		require.NoError(t, cmd.Execute())
-		require.NotEmpty(t, outBuf.String())
+	// 	cmd.SetArgs([]string{
+	// 		"-e", "is-helm-v3",
+	// 		"-V", "4.9",
+	// 		"../pkg/chartverifier/checks/chart-0.1.0-v3.valid.tgz",
+	// 	})
+	// 	require.NoError(t, cmd.Execute())
+	// 	require.NotEmpty(t, outBuf.String())
 
-		expected := "results:\n" +
-			"  - check: v1.0/is-helm-v3\n" +
-			"    type: Mandatory\n" +
-			"    outcome: PASS\n" +
-			"    reason: API version is V2, used in Helm 3\n"
-		require.Contains(t, outBuf.String(), expected)
-	})
+	// 	expected := "results:\n" +
+	// 		"  - check: v1.0/is-helm-v3\n" +
+	// 		"    type: Mandatory\n" +
+	// 		"    outcome: PASS\n" +
+	// 		"    reason: API version is V2, used in Helm 3\n"
+	// 	require.Contains(t, outBuf.String(), expected)
+	// })
 
 	t.Run("Should display JSON certificate when option --output and argument values are given", func(t *testing.T) {
 		cmd := NewVerifyCmd(viper.New())
