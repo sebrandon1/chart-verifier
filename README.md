@@ -1,6 +1,6 @@
 # **chart-verifier**: Rules based tool to certify Helm charts
 
-testing!
+testing! again
 
 [![Docker Repository on Quay](https://quay.io/repository/redhat-certification/chart-verifier/status "Docker Repository on Quay")](https://quay.io/repository/redhat-certification/chart-verifier)
 
